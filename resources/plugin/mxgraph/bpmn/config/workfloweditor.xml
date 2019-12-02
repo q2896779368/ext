@@ -1,6 +1,0 @@
-<mxEditor>
-	<include name="resources/plugin/mxgraph/bpmn/config/wfeditor-commons.xml"/>
-	<mxGraph as="graph">
-		<include name="resources/plugin/mxgraph/bpmn/config/wfgraph-commons.xml"/>
-	</mxGraph>
-</mxEditor>
