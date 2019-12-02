@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.left-zygl{
+    background-image: linear-gradient(-90deg,#3a3167 0%, #222c59 30%, #09274a 100%);
+    color: #ffffff;
+    font-size: 16px;
+    /*background-color:#2d3b4a;*/
+    height: 50px;
+    width: 100%;
+    top:0;
+    bottom:0;
+    position: fixed;
+    left: 0;
+    color:#ffffff;
+   border-bottom: 4px solid #2a79d4;
+}
+
+.zyg-img{
+    width: 32px;
+    margin-top: 17px;
+}
+
+.imgbj{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 164px;
+    height: 50px;
+}
+.zygl-right-div{
+    z-index: 2;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 164px;
+    height: 50px;
+}
+.zygl-div-right{
+    width: 100%;
+    height: 100%;
+
+}
+.zygl-div-right>div{
+    opacity: 0.9;
+    width: 50px;
+    height: 100%;
+    float: left;
+    margin-right: 4px;
+    /*background: #5c738b;*/
+    text-align: center;
+    z-index: 12;
+}
+/*.zygl-div-right>div:hover{*/
+    /*opacity: 0.8;*/
+   /*background: #09274a;*/
+/*}*/
+
+.zygl-right-div div img{
+    opacity: 1;
+    height: 16px;
+    width: 16px;
+    vertical-align: -16px;
+    z-index: 10;
+}
+.zygl-right-div .bjimg{
+    width: 100%;
+    height: 100%;
+}
+
+.left-zygl-img{
+    margin-left: 20px;
+    margin-top: 12px;
+    height: 32px;
+}
+
+.left-zygl-font{
+    font-size: 16px;
+    vertical-align: 12px;
+    margin-left: -10px;
+}
+.left-zyg{
+
+}
+
+.left-zyg-center>div{
+    height: 90px;
+    background-color: #2d3b4a;
+    /*border-left: 6px solid #325C7E;*/
+}
+.left-zyg-center>div:hover{
+    background-color: #363839;
+    cursor:pointer;
+    /*border-left: 6px solid #295272;*/
+}
+
+.left-zygl-div {
+    /*position: absolute;*/
+    /*left: 12px;*/
+    /*top: 20px;*/
+}
+
+.left-zyg-center{
+    text-align: center;
+    background-color: #2d3b4a;
+    width: 72px;
+    height: 100%;
+    top:54px;
+    bottom:0;
+    position: fixed;
+    left: 0;
+}
+
+.left-span{
+
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+}
+.border-div{
+    margin-top: 12px;
+    margin-left: 13px;
+    width: 24px;
+    height: 24px;
+    /*background: #898cb8;*/
+    border-radius: 2px;
+}
+.border-div:hover{
+    background: #9F8EAC;
+    cursor:pointer;
+}
+.border-div>img{
+    vertical-align: -4px !important;
+ }
+
+.active {
+    background-color: #1f2c39 !important;
+    cursor: pointer;
+}
+
+.qwert {
+    height: 94px;
+    padding-top: 6px;
+    width: 100%;
+    line-height: 16px;
+    word-wrap: break-word;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}

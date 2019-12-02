@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="resources/images/logo.ico">
+    <link rel="stylesheet" href="resources/css/index.css">
+    <style>
+        #loading {
+            background-color: #2c3e50;
+            height: calc(100% - 54px);
+            width: calc(100% - 72px);
+            position: fixed;
+            z-index: 1;
+            margin-top: 0px;
+            /*top: 0px;*/
+        }
+
+        #loading-center {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #loading-center-absolute {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 50px;
+            width: 50px;
+            margin-top: -25px;
+            margin-left: -25px;
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-animation: loading-center-absolute 1.5s infinite;
+            animation: loading-center-absolute 1.5s infinite;
+
+        }
+
+        .loading-bottom-absolute {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 150px;
+            width: 150px;
+            margin-top: 80px;
+            margin-left: -25px;
+        }
+
+        .object {
+            width: 25px;
+            height: 25px;
+            background-color: #FFF;
+            float: left;
+
+        }
+
+        #object_one {
+            -webkit-animation: object_one 1.5s infinite;
+            animation: object_one 1.5s infinite;
+        }
+
+        #object_two {
+            -webkit-animation: object_two 1.5s infinite;
+            animation: object_two 1.5s infinite;
+        }
+
+        #object_three {
+            -webkit-animation: object_three 1.5s infinite;
+            animation: object_three 1.5s infinite;
+        }
+
+        #object_four {
+            -webkit-animation: object_four 1.5s infinite;
+            animation: object_four 1.5s infinite;
+        }
+
+        @-webkit-keyframes loading-center-absolute {
+            100% {
+                -webkit-transform: rotate(-45deg);
+            }
+
+        }
+
+        @keyframes loading-center-absolute {
+            100% {
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+            }
+        }
+
+        @-webkit-keyframes object_one {
+            25% {
+                -webkit-transform: translate(0, -50px) rotate(-180deg);
+            }
+            100% {
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+
+        }
+
+        @keyframes object_one {
+            25% {
+                transform: translate(0, -50px) rotate(-180deg);
+                -webkit-transform: translate(0, -50px) rotate(-180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(-180deg);
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+        }
+
+        @-webkit-keyframes object_two {
+            25% {
+                -webkit-transform: translate(50px, 0) rotate(-180deg);
+            }
+            100% {
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+        }
+
+        @keyframes object_two {
+            25% {
+                transform: translate(50px, 0) rotate(-180deg);
+                -webkit-transform: translate(50px, 0) rotate(-180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(-180deg);
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+        }
+
+        @-webkit-keyframes object_three {
+            25% {
+                -webkit-transform: translate(-50px, 0) rotate(-180deg);
+            }
+            100% {
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+        }
+
+        @keyframes object_three {
+            25% {
+                transform: translate(-50px, 0) rotate(-180deg);
+                -webkit-transform: translate(-50px, 0) rotate(-180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(-180deg);
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+        }
+
+        @-webkit-keyframes object_four {
+            25% {
+                -webkit-transform: translate(0, 50px) rotate(-180deg);
+            }
+            100% {
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+        }
+
+        @keyframes object_four {
+            25% {
+                transform: translate(0, 50px) rotate(-180deg);
+                -webkit-transform: translate(0, 50px) rotate(-180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(-180deg);
+                -webkit-transform: translate(0, 0) rotate(-180deg);
+            }
+        }
+    </style>
+    <script src="resources/plugin/jQuery/jquery.min.js"></script>
+    <title>Cosmo++ DDS</title>
+    <!--socket io-->
+</head>
+<body>
+<!-- 导航栏，蓝色背景占位 -->
+<div id='zyg1' class="left-zygl">
+    <div class="left-zygl-div">
+        <img src="resources/images/gdf-logo.svg" class="left-zygl-img" title=""/>　
+        <span class="left-zygl-font">Cosmo++ DDS 图形化数据开发工作室</span>
+    </div>
+
+    <div class="zygl-right-div">
+        <img class="imgbj" src="sass/src/view/main/left/leftImage/zygl-imgbj.png"/>
+        <div class="zygl-div-right">
+            <div class="zygl-user">
+
+                <div class="border-div">
+                    <img class="img-border" src="sass/src/view/main/left/leftImage/user.svg"/>
+                </div>
+            </div>
+            <div class="zygl-news">
+                <div class="border-div">
+                    <img class="img-border" src="sass/src/view/main/left/leftImage/news.svg"/>
+                </div>
+
+            </div>
+            <div class="zygl-set">
+                <div class="border-div">
+                    <img class="img-border" src="sass/src/view/main/left/leftImage/set.svg"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 侧边导航栏 -->
+<div id='zyg' class="left-zyg" style="width: 100%;height: 100%;margin: 0;padding: 0">
+    <div class="left-zyg-center" style="margin: 0;padding: 0">
+        <div class="active-class" id="true" onclick="getMain('dataDevelopment',0)">
+            <img class="zyg-img" src="sass/src/view/main/left/leftImage/1dataDevelop.svg" title="数据开发"/>
+            <span class="left-span">数据开发</span>
+        </div>
+        <div class="active-class" onclick="getMain('missionControl',1)">
+            <img class="zyg-img" src="sass/src/view/main/left/leftImage/2taskMoni.svg" title="任务监控"/>
+            <span class="left-span">任务监控</span>
+        </div>
+        <div class="active-class" onclick="getMain('tableManagement',2)">
+            <img class="zyg-img" src="sass/src/view/main/left/leftImage/3tableManage.svg" title="表管理"/>
+            <span class="left-span">表管理</span>
+        </div>
+        <div class="active-class" onclick="getMain('resourceAdministration',3)">
+            <img class="zyg-img" src="sass/src/view/main/left/leftImage/4sourceManage.svg" title="资源管理"/>
+            <span class="left-span">资源管理</span>
+        </div>
+        <div class="active-class" onclick="getMain('demand',4)">
+            <img class="zyg-img" src="sass/src/view/main/left/leftImage/5search.svg" title="查询"/>
+            <span class="left-span">查询</span>
+        </div>
+        <div onclick="getMain('recycleBin',5)">
+            <img class="zyg-img" src="sass/src/view/main/left/leftImage/6recycleBin.svg" title="回收站"/>
+            <span class="left-span">回收站</span>
+        </div>
+    </div>
+
+    <!-- 主区域，显示工作空间内容 -->
+    <iframe
+            frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"
+            id="MainCon"
+            style="position: absolute;
+            left:72px;
+            top:54px;
+            right:0;
+            bottom:0;
+            height:calc(100% - 54px);
+            width:calc(100% - 72px);
+            border: none;"
+            src='./resources/plugin/iframe/default.html'>
+    </iframe>
+    <!--    dds-->
+    <iframe
+            frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"
+            id="MainCon_dds"
+            style="position: absolute;
+            left:72px;
+            top:54px;
+            right:0;
+            bottom:0;
+            height:calc(100% - 54px);
+            width:calc(100% - 72px);
+            border: none;
+ display: none"
+            src='./indexx.html'>
+    </iframe>
+    <div id="loadingImg">
+        <div id="loading">
+            <div id="loading-center">
+                <div id="loading-center-absolute">
+                    <div class="object" id="object_one"></div>
+                    <div class="object" id="object_two"></div>
+                    <div class="object" id="object_three"></div>
+                    <div class="object" id="object_four"></div>
+                </div>
+
+            </div>
+            <div class="loading-bottom-absolute" style="color:white;">Loading...</div>
+        </div>
+    </div>
+    <!--    <div id="loadingImg" style=" position: absolute;-->
+    <!--                left:72px;-->
+    <!--                top:54px;-->
+    <!--                right:0;-->
+    <!--                bottom:0;-->
+    <!--                height:calc(100% - 54px);-->
+    <!--                width:calc(100% - 72px);-->
+    <!--                z-index: 10000;-->
+    <!--                 text-align: center;-->
+    <!--                display: none;-->
+    <!--background: #fff;">-->
+    <!--        <img src="./resources/images/jdt.gif" style="-->
+    <!--                margin-top: 320px;-->
+    <!--                right:0;-->
+    <!--                bottom:0;-->
+    <!--                height:100px;-->
+    <!--                width:100px;" alt="">-->
+    <!--        <p>加载中......</p>-->
+    <!--    </div>-->
+
+
+</div>
+<script>
+    //获取子页面的状态
+    // var iframeWin = document.querySelector('#MainCon').contentWindow.window;
+    var typeIndex = null;
+    // var oldId = "";
+    var getMain = function (obj, index) {
+        // 点击的侧边栏按钮是哪个，对应弹出内容
+        var typeName = "";
+        //上一个页面的值
+        oldId = $("")
+        switch (obj) {
+            case "dataDevelopment":
+                styleDiv(index)
+                typeName = "dataDevelopment";
+                break;
+            case "missionControl":
+                styleDiv(index);
+                typeName = "missionControl";
+                break;
+            case "tableManagement":
+                styleDiv(index)
+                typeName = "tableManagement"
+                break;
+            case "resourceAdministration":
+                styleDiv(index)
+                typeName = "resourceAdministration"
+                break;
+            case "demand":
+                styleDiv(index)
+                typeName = "demand"
+                break;
+            case "recycleBin":
+                styleDiv(index)
+                typeName = "recycleBin"
+                break;
+        }
+        //判断点击的是谁
+        if (typeName) {
+            if (typeIndex == 0) {
+                // if ($('.left-zyg-center div').eq(typeIndex)[0].id == "true") {
+                //     if (window.confirm( '    离开此网站?\u000d           系统可能不会保存您所做的更改!')) {
+                //         openAjax()
+                //     } else {
+                //         styleDiv(0)
+                //         //  aH3[0].className = "active";
+                //         return false;
+                //     }
+                // }
+            }
+
+            openAjax()
+        }
+
+        //跳转需要的交互
+        function openAjax() {
+            if (typeName == 'dataDevelopment') {
+
+
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                url: "ddsUrl",
+                data: {
+                    name: typeName
+                },
+                success: function (data) {
+
+                    document.getElementById('MainCon').src = data;
+                },
+                error: function (data) {
+                    alert("请求失败了")
+                }
+            })
+        };
+    }
+    var statusdds = false
+    document.getElementById('MainCon_dds').onload = function () {
+        statusdds = true
+    };
+
+    //改变选中状态
+    function styleDiv(index) {
+        var aH2 = document.getElementsByClassName("left-zyg-center");
+        var aH3 = aH2[0].getElementsByTagName("div");
+        for (var i = 0; i < aH3.length; i++) {
+            aH3[i].className = "";
+        }
+        //loading 加载等待图片
+        if (!(index == 0)) {
+            // document.getElementById('MainCon').src=''
+            $('#loadingImg').css({
+                display: 'block'
+            })
+        }
+        //iframe框 显示隐藏
+        if (index == 0) {
+            document.getElementById('MainCon_dds').style.display = 'block'
+            document.getElementById('MainCon').style.display = 'none'
+            document.getElementById('MainCon_dds').onload = function () {
+                $('#loadingImg').css({
+                    display: 'none'
+                })
+            };
+        } else {
+            document.getElementById('MainCon_dds').style.display = 'none'
+            document.getElementById('MainCon').style.display = 'block'
+            document.getElementById('MainCon').onload = function () {
+                $('#loadingImg').css({
+                    display: 'none'
+                })
+            };
+        }
+        aH3[index].className = "active";
+        setTimeout(function () {
+            typeIndex = index
+        }, 1000);
+    }
+
+    // debugger
+
+
+</script>
+</body>
+</html>

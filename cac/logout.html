@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../resources/plugin/jQuery/jquery.min.js"></script>
+    <script src="cac.js"></script>
+    <script>
+        $(function () {
+            cac.token.deleteToken()
+            window.location.href = cac.config.logoutUri + '?logout_redirect_uri=' + cac.config.localuri + '/'
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

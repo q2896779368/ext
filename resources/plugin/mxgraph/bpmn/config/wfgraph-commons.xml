@@ -1,0 +1,298 @@
+<mxGraph alternateEdgeStyle="verticalEdge" dropEnabled="1">
+    <add as="convertValueToString"><![CDATA[
+			function(cell)
+			{
+				return cell.getAttribute('label');
+			}
+		]]></add>
+    <!--<add as="isAutoSizeCell">-->
+    <!--<![CDATA[-->
+    <!--function(cell)-->
+    <!--{-->
+    <!--return this.isSwimlane(cell);-->
+    <!--}-->
+    <!--]]>-->
+    <!--</add>-->
+    <!--<add as="isSwimlane">-->
+    <!--<![CDATA[-->
+    <!--function (cell)-->
+    <!--{-->
+    <!--return mxUtils.isNode(this.model.getValue(cell), 'swimlane');-->
+    <!--}-->
+    <!--]]>-->
+    <!--</add>-->
+    <!--<add as="isAllowOverlapParent">-->
+    <!--<![CDATA[-->
+    <!--function(cell)-->
+    <!--{-->
+    <!--return !this.isSwimlane(cell.parent);-->
+    <!--}-->
+    <!--]]>-->
+    <!--</add>-->
+    <!--<add as="getTooltipForCell">-->
+    <!--<![CDATA[-->
+    <!--function(cell)-->
+    <!--{-->
+    <!--var href = cell.getAttribute('href');-->
+    <!--href = (href != null && href.length > 0) ?-->
+    <!--'<br>'+href : '';-->
+    <!--var maxlen = 30;-->
+    <!--var desc = cell.getAttribute('description');-->
+    <!--if (desc == null || desc.length == 0)-->
+    <!--{-->
+    <!--desc = '';-->
+    <!--}-->
+    <!--else if (desc.length < maxlen)-->
+    <!--{-->
+    <!--desc = '<br>'+desc;-->
+    <!--}-->
+    <!--else-->
+    <!--{-->
+    <!--desc = '<br>'+desc.substring(0, maxlen)+'...';-->
+    <!--}-->
+    <!--return '<b>'+cell.getAttribute('label')+-->
+    <!--'</b> ('+cell.getId()+')'+href+desc+-->
+    <!--'<br>Edges: '+cell.getEdgeCount()+-->
+    <!--'<br>Children: '+cell.getChildCount();-->
+    <!--}-->
+    <!--]]>-->
+    <!--</add>-->
+    <mxGraphModel as="model">
+        <add as="valueForCellChanged"><![CDATA[
+				function(cell, value)
+				{
+					var previous = null;
+
+					if (value == null || isNaN(value.nodeType))
+					{
+						previous = cell.value.getAttribute('label');
+
+						if (value == null)
+						{
+							cell.value.removeAttribute('label');
+						}
+						else
+						{
+							cell.setAttribute('label', value);
+						}
+					}
+					else
+					{
+						previous = cell.value;
+						cell.value = value;
+					}
+
+					return previous;
+				}
+			]]></add>
+        <root>
+            <Workflow label="MyWorkflow" description="" href="" id="Workflow"/>
+            <Layer label="Default Layer" id="Layer">
+                <mxCell parent="Workflow"/>
+            </Layer>
+        </root>
+    </mxGraphModel>
+    <mxStylesheet as="stylesheet">
+        <add as="defaultVertex">
+            <add as="shape" value="mxgraph.bpmn.shape"/>
+            <!--<add as="perimeter" value="ellipsePerimeter"/>-->
+            <add as="perimeter" value="rectanglePerimeter"/>
+            <add as="html" value="1"/>
+            <add as="verticalLabelPosition" value="bottom"/>
+            <add as="verticalAlign" value="top"/>
+            <add as="align" value="center"/>
+            <add as="fillColor" value="#fff"/>
+            <!--<add as="color" value="#000"/>-->
+            <add as="strokeColor" value="#0085AF"/>
+            <add as="outlineConnect" value="0"/>
+            <!--约束比例-->
+            <add as="aspect" value="fixed"/>
+            <add as="strokeWidth" value="2"/>
+        </add>
+        <add as="defaultEdge">
+            <add as="shape" value="connector"/>
+            <add as="labelBackgroundColor" value="white"/>
+            <add as="rounded" value="1"/>
+            <add as="edgeStyle" value="elbowEdgeStyle"/>
+            <add as="endArrow" value="classic"/>
+            <add as="fontSize" value="10"/>
+            <add as="align" value="center"/>
+            <add as="verticalAlign" value="middle"/>
+            <add as="strokeColor" value="#0085AF"/>
+        </add>
+
+        <add as="SequenceFlow">
+            <add as="shape" value="connector"/>
+            <add as="labelBackgroundColor" value="white"/>
+            <add as="rounded" value="1"/>
+            <add as="edgeStyle" value="elbowEdgeStyle"/>
+            <add as="fontSize" value="10"/>
+            <add as="align" value="center"/>
+            <add as="verticalAlign" value="middle"/>
+            <!--<add as="strokeColor" value="#0085AF"/>-->
+            <add as="strokeWidth" value="2"/>
+        </add>
+        <add as="MessageFlow">
+            <add as="shape" value="connector"/>
+            <add as="labelBackgroundColor" value="white"/>
+            <add as="rounded" value="1"/>
+            <add as="edgeStyle" value="elbowEdgeStyle"/>
+            <add as="fontSize" value="10"/>
+            <add as="align" value="center"/>
+            <add as="verticalAlign" value="middle"/>
+            <!--<add as="strokeColor" value="#000"/>-->
+            <add as="strokeWidth" value="2"/>
+            <add as="dashed" value="1"/>
+            <add as="startArrow" value="oval"/>
+            <add as="endArrow" value="block"/>
+            <add as="startFill" value="0"/>
+            <add as="endFill" value="0"/>
+            <add as="sourcePerimeterSpacing" value="4"/>
+        </add>
+        <add as="Association">
+            <add as="shape" value="connector"/>
+            <add as="labelBackgroundColor" value="white"/>
+            <add as="rounded" value="1"/>
+            <add as="edgeStyle" value="elbowEdgeStyle"/>
+            <add as="fontSize" value="10"/>
+            <add as="align" value="center"/>
+            <add as="verticalAlign" value="middle"/>
+            <!--<add as="strokeColor" value="#000"/>-->
+            <add as="strokeWidth" value="1"/>
+            <add as="dashed" value="1"/>
+            <add as="endArrow" value="none"/>
+
+        </add>
+        <add as="DefaultFlow">
+            <add as="shape" value="connector"/>
+            <add as="labelBackgroundColor" value="white"/>
+            <add as="rounded" value="1"/>
+            <add as="edgeStyle" value="elbowEdgeStyle"/>
+            <add as="fontSize" value="10"/>
+            <add as="align" value="center"/>
+            <add as="verticalAlign" value="middle"/>
+            <!--<add as="strokeColor" value="#000"/>-->
+            <add as="strokeWidth" value="2"/>
+            <add as="startArrow" value="dash"/>
+            <add as="startSize" value="12"/>
+        </add>
+        <add as="ConditionFlow">
+            <add as="shape" value="connector"/>
+            <add as="labelBackgroundColor" value="white"/>
+            <add as="rounded" value="1"/>
+            <add as="edgeStyle" value="elbowEdgeStyle"/>
+            <add as="fontSize" value="10"/>
+            <add as="align" value="center"/>
+            <add as="verticalAlign" value="middle"/>
+            <!--<add as="strokeColor" value="#000"/>-->
+            <add as="strokeWidth" value="2"/>
+            <add as="startArrow" value="diamond"/>
+            <add as="endArrow" value="block"/>
+            <add as="startFill" value="0"/>
+            <add as="endFill" value="1"/>
+            <add as="startSize" value="12"/>
+        </add>
+        <add as="DataAssociation">
+            <add as="shape" value="connector"/>
+            <add as="labelBackgroundColor" value="white"/>
+            <add as="rounded" value="1"/>
+            <add as="edgeStyle" value="elbowEdgeStyle"/>
+            <add as="fontSize" value="10"/>
+            <add as="align" value="center"/>
+            <add as="verticalAlign" value="middle"/>
+            <!--<add as="strokeColor" value="#000"/>-->
+            <add as="strokeWidth" value="1"/>
+            <add as="dashed" value="1"/>
+            <add as="endFill" value="0"/>
+            <add as="endArrow" value="wire"/>
+        </add>
+        <!--1-->
+        <add as="Hive">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-1SQL.svg"/>
+        </add>
+        <add as="SparkPython">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-2PYTHON.svg"/>
+        </add>
+        <add as="SparkScala">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-3SCALA.svg"/>
+        </add>
+        <add as="Shell">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-4SHELL.svg"/>
+        </add>
+
+        <!--2-->
+        <add as="HiveTwo">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-1Hive Script.svg"/>
+        </add>
+        <add as="Java">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-2JAVA.svg"/>
+        </add>
+        <add as="SparkJava">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-3SparkAPP.svg"/>
+        </add>
+        <add as="MapReduce">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/1-4MR Program.svg"/>
+        </add>
+        <add as="Flink">
+            <add as="shape" value="image"/>
+            <add key="flinkLib" value="/var/run/dds/flinkLib" />
+            <add as="image" value="resources/images/gdfline/1-6Flink.svg"/>
+        </add>
+        <add as="Distcp">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/3-5DISTCP.svg"/>
+        </add>
+        <add as="FS">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/3-6FS.svg"/>
+        </add>
+        <!--3-->
+        <add as="Sqoop">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/4-1Sqoop.svg"/>
+        </add>
+        <add as="SSH">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/SSH_png.png"/>
+        </add>
+        <!--4-->
+        <add as="Email">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/4-1E-MAIL.svg"/>
+        </add>
+        <add as="CosmoDip">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/DIP_png.png"/>
+        </add>
+        <!-- 组件-->
+        <add as="SubWorkFlow">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/sub_process.svg"/>
+        </add>
+        <!-- 节点控制 -->
+        <add as="Begin">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/begin_png.png"/>
+        </add>
+        <add as="End">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/end_png.png"/>
+        </add>
+        <add as="Fork">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/branch_png.png"/>
+        </add>
+        <add as="Join">
+            <add as="shape" value="image"/>
+            <add as="image" value="resources/images/gdfline/merger_png.png"/>
+        </add>
+    </mxStylesheet>
+</mxGraph>

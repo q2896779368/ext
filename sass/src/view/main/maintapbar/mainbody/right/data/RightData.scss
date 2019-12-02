@@ -1,0 +1,818 @@
+/*
+#dataSource .x-toolbar-default {
+  background-color: #1d2d3a;
+}
+
+#dataSource .x-form-trigger-toolbar {
+  -webkit-background-size: 22px 25px;
+  background-size: 22px 25px;
+  background-image: url(images/component/xiala.png) !important;
+  background-color: transparent;
+  background-position: 0 0;
+  width: 22px;
+  border-width: 0 !important;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+#dataSource .x-form-text-toolbar {
+  background-image: none;
+  background-color: #1d262f;
+}
+
+#dataSource .x-form-text-wrap-toolbar {
+  border-color: #1d262f;
+}
+
+#dataSource .x-form-focus:not(textarea) {
+  background-color: #fff !important;
+  color: #BABABA !important;
+}
+
+#dataSource .x-panel-body-default {
+  background-color: #1d2d3a;
+}
+
+#dataSource .x-form-item-label-toolbar {
+  color: #fff;
+  font: normal 12px/14px tahoma, arial, verdana, sans-serif;
+  min-height: 22px;
+  padding-top: 4px;
+  padding-right: 5px;
+}
+
+#dataSource .x-toolbar-default {
+  padding-left: 0px;
+}
+
+#database textarea {
+  padding: 5px;
+}
+
+#database .x-btn-inner-default-toolbar-small {
+  color: #fff;
+}
+
+#setCondition-inputEl, #customSQLCondition-inputEl {
+  background: #1D2D3A;
+  color: #BABABA !important;
+}
+
+#setCondition-inputWrap, #customSQLCondition-inputWrap {
+  border: 1px solid #2C4D6E !important;
+}
+
+#previewGrid .x-column-header {
+  color: #fff;
+  background-image: none;
+  background-color: #263646;
+}
+#bindLineWindow .x-form-focus {
+  color: #fff;
+  background-color: #1d2d3a;
+}
+
+#bindLineWindow .x-form-text-grid-cell,#bindLineWindow .x-form-text-toolbar {
+  background-image: none;
+  background-color: #1d2d3a;
+  border-color: #1d2d3a;
+}
+#bindLineWindow .x-form-text-wrap-grid-cell,#bindLineWindow .x-form-text-wrap-toolbar{
+  border-color: #1d2d3a;
+}
+
+#bindLineWindow .x-form-trigger-grid-cell{
+  background-position: 0!important;
+  -webkit-background-size: 22px 25px;
+  background-size: 22px 25px;
+  background-image: url(images/component/xiala.png)!important;
+  width:22px;
+  border-width: 0!important;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+#dataSourceList-body {
+  overflow-y: auto;
+}
+#dataSourceList .dataSourceBtn,#dataSourceList .bindCmpBtn {
+  background-color: #E7EAEC!important;
+  border-radius: 2px;
+  text-align: left;
+  padding-left: 20px;
+  text-align: left;
+}
+#dataSourceList .dataSourceBtn span,#dataSourceList .bindCmpBtn span {
+  text-align: left;
+  justify-content: left;
+  color: #494949!important;
+}
+#dataSourceList .dataSourceBtn:after,#dataSourceList .bindCmpBtn:after {
+  content: '';
+  position: absolute;
+  right: 7px;
+  top: 8px;
+  width: 0;
+  height: 0;
+  border: 3px solid #000000;
+  border-top: 7px solid #000000;
+  border-color: #f00 #000 #f0f #00f;
+  border-color: #000000 transparent transparent transparent;
+  z-index: 1;
+}
+#dataSourceList .relationBtn {
+  background-color: transparent!important;
+  //background-image: url(images/icon/cosmo_icon_data.png);
+}
+#dataSourceList .databaseBtn {
+  background-color: transparent!important;
+  background-image: url(images/component/panel_header_background.png)!important;
+}
+
+.relation {
+  background-image: url(images/icon/leftAndRight.png)!important;
+}
+
+.database {
+  background-image: url(images/icon/databaseIcon.png)!important;
+}
+#bindLineWindow .x-grid-widgetcolumn-cell-inner {
+  padding: 0!important;
+}
+#bindLineWindow .x-fa {
+  color: #3fa9f5 !important;
+}
+!*修改中间设计页面 滚动条样式*!
+#itemselector-field .x-scroller:first-child::-webkit-scrollbar{!*滚动条整体样式*!
+  width: 6px;     !*高宽分别对应横竖滚动条的尺寸*!
+  height: 12px;
+}
+#itemselector-field .x-scroller:first-child::-webkit-scrollbar-thumb {!*滚动条里面小方块*!
+  border-radius: 5px;
+  !*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);*!
+  opacity: .4;
+  background: #526372;
+}
+#itemselector-field .x-scroller:first-child::-webkit-scrollbar-track {!*滚动条里面轨道*!
+  //-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  //border-radius: 0;
+  //background: rgba(0,0,0,0.1);
+}
+!*修改中间设计页面 滚动条样式*!
+#itemselector-field .x-scroller:last-child::-webkit-scrollbar{!*滚动条整体样式*!
+  width: 6px;     !*高宽分别对应横竖滚动条的尺寸*!
+  height: 12px;
+}
+#itemselector-field .x-scroller:last-child::-webkit-scrollbar-thumb {!*滚动条里面小方块*!
+  border-radius: 5px;
+  opacity: .4;
+  !*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);*!
+  background: #526372;
+}
+#itemselector-field .x-scroller:last-child::-webkit-scrollbar-track {!*滚动条里面轨道*!
+  //-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  //border-radius: 0;
+  //background: rgba(0,0,0,0.1);
+}
+
+!*修改中间设计页面 滚动条样式*!
+#setCondition-inputEl::-webkit-scrollbar,#databaseTree-body .x-scroller::-webkit-scrollbar{!*滚动条整体样式*!
+  width: 6px;     !*高宽分别对应横竖滚动条的尺寸*!
+  height: 12px;
+}
+#setCondition-inputEl::-webkit-scrollbar-thumb,#databaseTree-body .x-scroller::-webkit-scrollbar-thumb{!*滚动条里面小方块*!
+  border-radius: 5px;
+  opacity: .4;
+  !*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);*!
+  background: #526372;
+}
+#setCondition-inputEl::-webkit-scrollbar-track,#databaseTree-body .x-scroller::-webkit-scrollbar-track{!*滚动条里面轨道*!
+  //-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  //border-radius: 0;
+  //background: rgba(0,0,0,0.1);
+}
+
+!*去除表格header-ct*!
+#report .x-grid-header-ct {
+  border: none!important;
+}
+
+#report .x-column-header {
+  color: #fff;
+  background-image: none;
+  background-color: #263646;
+}
+
+#paramsList-body>div{
+  overflow-x: hidden!important;
+}
+
+#paramsList .x-grid-widgetcolumn-cell-inner {
+  padding: 0!important;
+}
+#paramsList .x-form-focus {
+  color: #fff;
+  background-color: #1d2d3a;
+}
+
+#paramsList .x-form-text-grid-cell,#paramsList .x-form-text-toolbar {
+  background-image: none;
+  background-color: #1d2d3a;
+  border-color: #1d2d3a;
+}
+#paramsList .x-form-text-wrap-grid-cell,#paramsList .x-form-text-wrap-toolbar{
+  border-color: #1d2d3a;
+}
+
+
+
+
+
+
+
+
+  //分割线
+#col_box-outerCt {
+  border-top: 1px solid #0F2032 !important;
+  margin-top: 4px;
+}
+
+#Sql .x-autocontainer-outerCt {
+  top: 10px !important;
+  border-top: 1px solid #0F2032 !important;
+}
+
+#totalitySource .x-panel-body {
+  background: 0 !important;
+  color: #ffffff;
+}
+
+#storePage {
+  background: #1D2D3A;
+}
+
+#totalitySource .x-panel-body {
+  border: 0;
+  border-bottom: 1px solid #263646;
+}
+
+#title .x-title-text {
+  color: #888A8B;
+}
+
+//参数弹窗
+#grid .x-column-header {
+  //background-image:-webkit-linear-gradient(top, #465F76, #465F76) !important;
+}
+
+#grid .x-box-target > div:nth-last-child(1) {
+  border: 0 !important;
+}
+
+//#grid .x-autocontainer-innerCt{
+//	background: #263646!important;
+//}
+#paramPage {
+  background-color: #263646 !important;
+}
+
+#paramPage-innerCt {
+  background: #263646 !important;
+}
+
+#rightData-body {
+  top: 30px !important;
+}
+
+//数据源弹窗背景色
+#storeWindowId {
+  background: #1D2D3A !important;
+}
+
+#storeWindowId .x-border-layout-ct {
+  background: #1D2D3A !important;
+}
+
+#storeWindowId .x-window-bodyWrap > .x-toolbar:nth-child(1) {
+  padding-left: 51px;
+}
+
+#storeWindowId .x-toolbar-default {
+  background: #1D2D3A !important;
+}
+
+#storeWindowId .x-panel-body-default {
+  //border:0 !important;
+  background: 0 !important;
+}
+
+//数据源自定义SQL样式
+#centerPanelPage-inputEl {
+  background: #1D2D3A !important;
+}
+
+//定义、预览数据（按钮）
+#datatitle .x-toolbar {
+  background: #1D2D3A !important;
+  border: 0 !important;
+}
+
+#datatitle .x-btn:hover {
+  background: #1D2D3A !important;
+  border: 0 !important;
+}
+
+#datatitle a .x-btn-inner {
+  color: #fff;
+}
+
+//参数快速引用（提示）
+
+#datatitleright .x-toolbar {
+  background: #1D2D3A !important;
+  border: 0 !important;
+}
+
+#datatitleright a {
+  left: 0 !important;
+}
+
+#datatitleright a .x-btn-inner {
+  color: #fff;
+}
+
+#datatitleright .x-btn:hover {
+  background: #1D2D3A !important;
+  border: 0 !important;
+}
+
+//数据源（数据表）样式
+//输入框
+#fastCenterPanelPage-inputEl, #centerPanelPage-inputEl {
+  background: #1D2D3A;
+  color: #BABABA !important;
+}
+
+#fastCenterPanelPage-inputWrap {
+  border: 0px solid #2C4D6E;
+}
+
+#toolbar-1123-targetEl .x-btn {
+  background: #1D2D3A;
+  border: 1px solid #1D2D3A;
+}
+
+#toolbar-1123-targetEl .x-btn:hover {
+  background: #1D2D3A;
+}
+
+#db_box-bodyWrap #db_box-body {
+  border: 0;
+}
+
+.x-window-body-default, #centerPanelPage-inputWrap {
+  border: 0;
+}
+
+#col_box-innerCt #title_header {
+  background: #1D2D3A;
+  border: 0;
+  -webkit-box-shadow: #1D2D3A 0 1px 0px 0 inset;
+}
+
+.x-field {
+  background: 0 !important;
+}
+
+//数据列
+
+#itemselector-field .x-panel {
+  width: 230px !important;
+  height: 134px !important;
+
+}
+
+#itemselector-field .x-panel-header {
+  width: 228px !important;
+}
+
+#itemselector-field .x-panel-body {
+  width: 228px !important;
+  border: 0 !important;
+}
+
+#itemselector-field .x-panel {
+  border: 1px solid #2C4D6E !important;
+}
+
+#itemselector-field .x-boundlist-list-ct {
+  width: 228px !important;
+  //width: 230px !important;
+}
+
+#itemselector-field .x-panel-header-default {
+  border: 0 !important;
+}
+
+#itemselector-field .x-toolbar .x-box-inner {
+  width: 235px !important;
+  height: 24px !important;
+}
+
+#itemselector-field .x-box-target a:nth-child(1) {
+  left: 78px !important;
+  top: -3px !important;
+  background: 0 !important;
+  border: 0;
+}
+
+#itemselector-field .x-box-target a:nth-child(2) {
+  left: 113px !important;
+  top: -3px !important;
+  background: 0 !important;
+  border: 0;
+}
+
+#itemselector-field .x-toolbar {
+  top: 136px !important;
+  background: 0 !important;
+  border: 0 !important;
+}
+
+#itemselector-field .x-panel-body {
+  height: 107px !important;
+}
+
+#itemselector-field .x-boundlist {
+  height: 105px !important;
+  background: 0 !important;
+}
+
+#itemselector-field .x-boundlist-item {
+  border: 0 !important;
+  color: #cacaca;
+}
+
+#itemselector-field .x-boundlist-list-ct {
+  height: 105px !important;
+}
+
+#itemselector-field .x-box-target div:nth-child(3) {
+  top: 165px !important;
+}
+
+#previewData .x-btn {
+  background: 0 !important;
+  border: 0 !important;
+}
+
+#previewData .x-btn .x-btn-inner {
+  color: #ffffff !important;
+}
+
+#parameterTreePanel .x-form-trigger-wrap {
+  width: 85% !important;
+}
+
+.x-title-text {
+  color: #ffffff;
+}
+
+.x-toolbar-text {
+  color: #ffffff !important;
+}
+
+.x-btn-inner-default-toolbar-small {
+  color: #cacaca;
+}
+
+//条件设置、参数应用按钮
+#conditionPara .x-btn {
+  background: 0 !important;
+  border: 0 !important;
+}
+
+#Sql .x-btn {
+  background: 0 !important;
+  border: 0 !important;
+}
+
+//确定取消按钮
+#ok {
+  background: #355775 !important;
+  border: 1px solid #355775;
+}
+
+#ok .x-btn-inner {
+  color: #ffffff;
+}
+
+#ok:hover {
+  background: #4A90E2 !important;
+  border: 1px solid #355775;
+}
+
+#no {
+  background: #355775 !important;
+  border: 1px solid #355775;
+}
+
+#no .x-btn-inner {
+  color: #ffffff;
+}
+
+#no:hover {
+  background: #4A90E2 !important;
+  border: 1px solid #355775;
+}
+
+//右移按钮
+#paraArea a {
+  background: 0 !important;
+}
+
+//数据源名称
+#rename_box-inputEl {
+  color: #000;
+}
+
+//取值方式
+
+#dataValue .x-form-trigger-wrap {
+  width: 83% !important;
+}
+
+#SqlCustomId .x-grid-body {
+  border: 0 !important;
+}
+
+//数据源名称input样式
+#rename_box .x-form-field {
+  background: #1D262F;
+  color: #BABABA !important;
+  border-color: #1D262F;
+}
+
+#rename_box .x-form-text-wrap {
+  border: 0 !important;
+}
+
+//数据源右侧动态加载HTML
+html, body, ul {
+  padding: 0;
+  margin: 0;
+}
+
+p, ul, li, h1, h2, h3, h4, h5, h6, a {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+.box {
+  width: 250px;
+  //overflow: hidden;
+  height: auto;
+  //padding-bottom: 100px;
+}
+
+.optionPart {
+  width: 180px;
+  height: 30px;
+  text-align: center;
+  line-height: 32px;
+  background: #fff;
+  position: relative;
+}
+
+.iconArrow {
+  position: absolute;
+  right: 7px;
+  top: 13px;
+  width: 0;
+  height: 0;
+  border: 3px solid #000000;
+  border-top: 7px solid #000000;
+  border-color: #f00 #000 #f0f #00f;
+  border-color: #000000 transparent transparent transparent;
+  z-index: 1;
+}
+
+.dataName {
+  width: 100%;
+  height: 50px;
+  padding: 20px 10px 0 10px;
+}
+
+.dataName .choiceData {
+
+  width: 180px;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.dataName .choiceData .choiceData_icon {
+  position: absolute;
+  left: 10px;
+  top: 11px;
+  width: 10px;
+  height: 10px;
+  z-index: 1;
+}
+
+.dataName .choiceData select {
+  width: 100%;
+  height: 100%;
+  padding-left: 30px;
+  float: left;
+}
+
+.dataName .dataIcon {
+  display: block;
+  float: left;
+  margin-top: -3px;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+
+.dataName .dataIcon img {
+  width: 20px;
+  height: 27px;
+}
+
+.dataName .dataSourceIcon {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.selectFunction {
+  width: 120px;
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  background: #F0F0F0;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  display: none;
+  z-index: 2;
+}
+
+.selectFunction li {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.selectFunction li:nth-last-child(1) {
+  border-bottom: 1px solid #000000;
+}
+
+.selectFunction li:hover {
+  background: #20486F;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.dataName .dataSourceIcon img {
+  width: 20px;
+  height: 29px;
+}
+
+.dataName .dataSourceIcon .triangle {
+  position: absolute;
+  right: -14px;
+  top: -2px;
+}
+
+.box .element {
+  float: left;
+  display: block;
+  width: 66%;
+  margin-left: 25px;
+  margin-bottom: 15px;
+  border-left: 1px solid #169BD5;
+}
+
+.box .element > li {
+  width: 100%;
+  height: 30px;
+  //float: left;
+  margin-top: 15px;
+  position: relative;
+}
+
+.box .element li span {
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: left;
+}
+
+.box .element li span img {
+  width: 100%;
+  height: 30px;
+  float: left;
+
+}
+
+.box .element li > div {
+  position: relative;
+  width: 134px;
+  background: #fff;
+  line-height: 30px;
+  padding-left: 10px;
+  height: 100%;
+  float: left;
+}
+
+.binding {
+  width: 175px;
+  position: absolute;
+  top: 29px;
+  left: 29px;
+  background: #F0F0F0;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  z-index: 2;
+  display: none;
+}
+
+.binding li {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.binding li:nth-last-child(1) {
+  border-bottom: 1px solid #000000;
+}
+
+.binding li:hover {
+  background: #20486F;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+//属性中定义数据样式
+//#showSelect-containerEl
+#columnsRadiogroup .x-form-item-body > div {
+  width: 185px !important;
+}
+
+#columnsRadiogroup .x-form-item-body {
+  padding: 0 !important;
+  padding-left: 24px !important
+}
+
+#pushLine .x-panel-body {
+  color: #cccccc;
+}
+
+#x-autocontainer-outerCt {
+  border: 1px solid red;
+}
+
+//#fieldcontainer label{
+//	color:#2b2b2b!important;
+//}
+#push .x-panel-body-default {
+  background: #263646 !important;
+}
+
+#pushLine .x-panel-body-default {
+  background: #344860;
+}
+
+//参数列表填写时的颜色
+#grid td div input {
+  color: #000000 !important;
+}
+
+//去掉树上面的白色线
+.x-grid-body {
+  border-top-color: #14202c !important;
+}
+
+*/

@@ -1,0 +1,686 @@
+// 解决中心区域盒模型问题
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #000;
+  outline: none;
+}
+
+.x-toolbar-default {
+  background-image: linear-gradient(-180deg, #EEEEEE 0%, #DDDDDD 100%);
+}
+
+.x-panel-header-default {
+  background-image: linear-gradient(-180deg, #EEEEEE 0%, #DDDDDD 100%);
+}
+
+#treeUrl1-bodyWrap {
+  .x-toolbar-default {
+    background-image: none !important;
+    background: #e8e8e8 !important;
+  }
+}
+
+.x-panel-header-title-default {
+  color: #172C44;
+}
+
+.x-panel-body-default {
+  background: #F1F1F1;
+}
+
+#centerEdit div.x-panel-body-default {
+  background: #ffffff;
+}
+
+// 顶部工具栏上面的渐变分割块
+#topRegion:before {
+  content: '';
+  height: 14px;
+  width: 100%;
+  position: absolute;
+  top: -14px;
+  left: 0;
+  background-image: linear-gradient(-180deg, #E3E3E3 0%, #BCC2C5 100%);
+  -webkit-background-size: 1px 14px;
+  background-size: 1px 14px;
+}
+
+// 两侧操作栏header渐变
+#leftRegion_header, #rightRegion_header {
+  background-image: linear-gradient(-180deg, #EEEEEE 0%, #DDDDDD 100%);
+  border-radius: 1px;
+}
+
+#leftRegion-body .x-panel-header, #rightRegion-body .x-panel-header, #centerTool_header {
+  background-image: linear-gradient(-180deg, #EEEEEE 0%, #DDDDDD 100%);
+  border-radius: 1px;
+  -webkit-background-size: 1px 27px;
+  background-size: 1px 27px;
+}
+
+// 选项卡圆角去除并且向左移动1px（默认间距是2px）
+.x-tab {
+  background-image: none;
+  border-radius: 0px !important;
+  margin-left: -1px !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+.x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
+  color: #ffffff;
+}
+
+.x-tab-active {
+  background: #63717D;
+}
+
+// tab选项卡样式调整
+.x-tab-bar-body-default {
+  padding: 0 !important;
+}
+
+.x-box-inner {
+  height: 25px;
+}
+
+.x-box-inner {
+  height: 25px;
+}
+
+// 树文件夹图标和文件图标更换
+.x-tree-icon-parent {
+  background-image: url(images/main/floder.png) !important;
+}
+
+.x-tree-icon-parent-expanded {
+  background-image: url(images/main/open.png) !important;
+}
+
+// 项目文件夹图标
+.icon_project {
+  background-image: url(images/icon/createProject.png) !important;
+}
+
+
+.x-tree-icon-leaf {
+  background-image: url(images/main/leaf.png) !important;
+}
+
+.cosmo_icon_logOut {
+  //background-image: url(images/top/logOut.png) !important;
+}
+
+.x-tree-arrows .x-tree-expander {
+  background-image: url(images/main/tree-arrows.png) !important;
+}
+
+// 树内背景色
+.x-grid-item {
+  background-color: #f1f1f1 !important;
+}
+
+// 树节点选中背景色
+.x-grid-item-selected {
+  background-color: #e7e7e7 !important;
+}
+
+//左侧panel图标
+.search {
+  background-image: url(images/left/search.png);
+}
+
+.manage {
+  background-image: url(images/component/icons/Drawer_navigation.png);
+}
+
+.model {
+  background-image: url(images/left/flie.png)
+}
+
+.folder {
+  background-image: url(images/left/folder.png)
+}
+
+.bpmn-task {
+  background-image: url(images/viso/bpmn-task.png);
+}
+
+.bpmn-problem {
+  background-image: url(images/viso/bpmn-problem.png);
+}
+
+.bpmn-commit {
+  background-image: url(images/viso/bpmn-commit.png);
+}
+
+.bpmn-request {
+  background-image: url(images/viso/bpmn-request.png);
+}
+
+.bpmn-approval {
+  background-image: url(images/viso/bpmn-approval.png);
+}
+
+.bpmn-refuse {
+  background-image: url(images/viso/bpmn-refuse.png);
+}
+
+.bpmn-agreement {
+  background-image: url(images/viso/bpmn-agreement.png);
+}
+
+.bpmn-analysis {
+  background-image: url(images/viso/bpmn-analysis.png);
+}
+
+.bpmn-meeting {
+  background-image: url(images/viso/bpmn-meeting.png);
+}
+
+.bpmn-call {
+  background-image: url(images/viso/bpmn-call.png);
+}
+
+.bpmn-perform {
+  background-image: url(images/viso/bpmn-perform.png);
+}
+
+.bpmn-author {
+  background-image: url(images/viso/bpmn-author.png);
+}
+
+.bpmn-research {
+  background-image: url(images/viso/bpmn-research.png);
+}
+
+.bpmn-interview {
+  background-image: url(images/viso/bpmn-interview.png);
+}
+
+.bpmn-person {
+  background-image: url(images/viso/bpmn-person.png);
+}
+
+.bpmn-half-person {
+  background-image: url(images/viso/bpmn-half-person.png);
+}
+
+.bpmn-custom {
+  background-image: url(images/viso/bpmn-custom.png);
+}
+
+.bpmn-user {
+  background-image: url(images/viso/bpmn-user.png);
+}
+
+.bpmn-prod {
+  background-image: url(images/viso/bpmn-prod.png);
+}
+
+.bpmn-doc {
+  background-image: url(images/viso/bpmn-doc.png);
+}
+
+.bpmn-box {
+  background-image: url(images/viso/bpmn-box.png);
+}
+
+.bpmn-cd {
+  background-image: url(images/viso/bpmn-cd.png);
+}
+
+.bpmn-ceo {
+  background-image: url(images/viso/bpmn-ceo.png);
+}
+
+.bpmn-cio {
+  background-image: url(images/viso/bpmn-cio.png);
+}
+
+.bpmn-coo {
+  background-image: url(images/viso/bpmn-coo.png);
+}
+
+.bpmn-cfo {
+  background-image: url(images/viso/bpmn-cfo.png);
+}
+
+.bpmn-crate {
+  background-image: url(images/viso/bpmn-crate.png);
+}
+
+.bpmn-competitor {
+  background-image: url(images/viso/bpmn-competitor.png);
+}
+
+.bpmn-docs {
+  background-image: url(images/viso/bpmn-docs.png);
+}
+
+.bpmn-fold {
+  background-image: url(images/viso/bpmn-fold.png);
+}
+
+.bpmn-unfold {
+  background-image: url(images/viso/bpmn-unfold.png);
+}
+
+.bpmn-email {
+  background-image: url(images/viso/bpmn-email.png);
+}
+
+.bpmn-ppt {
+  background-image: url(images/viso/bpmn-ppt.png);
+}
+
+.bpmn-excel {
+  background-image: url(images/viso/bpmn-excel.png);
+}
+
+.bpmn-usb {
+  background-image: url(images/viso/bpmn-usb.png);
+}
+
+.bpmn-supplier {
+  background-image: url(images/viso/bpmn-supplier.png);
+}
+
+.bpmn-web {
+  background-image: url(images/viso/bpmn-web.png);
+}
+
+// 左侧搜索功能按钮样式
+.leftSearchBtn, #resourceSearchField-trigger-bar, #cmpSearchField-trigger-bar, #tplSearchField-trigger-bar, #cmpSearchField-trigger-search {
+  background-image: none !important;
+  background-color: #355775;
+  color: #fff;
+  position: relative;
+}
+
+.leftSearchBtn:before, #resourceSearchField-trigger-bar:before, #cmpSearchField-trigger-bar:before, #tplSearchField-trigger-bar:before, #cmpSearchField-trigger-search:before {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+// 单选复选
+.x-form-checkbox-default, .x-form-radio-default {
+  width: 14px;
+  height: 14px;
+}
+
+// 默认
+.x-form-radio-default {
+  background: url(images/main/defult-radio.png) no-repeat;
+  background-position: -17px -17px;
+}
+
+//选中
+.x-form-cb-checked .x-form-radio-default {
+  background-position: -3px -3px;
+}
+
+.x-form-checkbox-focus.x-form-radio-default {
+  background-position: -17px -17px;
+}
+
+.x-form-cb-checked .x-form-checkbox-focus.x-form-checkbox-default {
+  background-position: -3px -3px;
+
+}
+
+// 复选默认
+.x-form-checkbox-default, .x-column-header-checkbox .x-column-header-checkbox:after, .x-grid-checkcolumn:after, body .x-form-checkbox-toolbar {
+  background: url(images/main/defult-checkbox.png) no-repeat;
+  background-position: -17px -17px;
+}
+
+// 复选选中
+.x-form-cb-checked .x-form-checkbox-default, .x-grid-item-selected .x-selmodel-column .x-grid-checkcolumn:after, .x-grid-checkcolumn-checked:after, body .x-form-cb-checked .x-form-checkbox-toolbar {
+  background-position: -3px -3px;
+}
+
+.x-grid-hd-checker-on .x-column-header-checkbox:after {
+  background-position: -3px -3px !important;
+}
+
+// 复选焦点
+.x-form-cb-checked .x-form-checkbox-focus.x-form-radio-default, .x-form-cb-checked .x-form-checkbox-focus.x-form-checkbox-toolbar {
+  background-position: -3px -3px;
+}
+
+.x-form-checkbox-focus.x-form-checkbox-default, .x-form-checkbox-focus.x-form-checkbox-toolbar {
+  background-position: -17px -17px;
+}
+
+// 复选label间距
+.x-form-cb-label-default.x-form-cb-label-after {
+  padding-left: 20px;
+}
+
+// 收缩面板按钮图标更换
+/*#leftRegion_header .x-tool-collapse-left {
+  background-image: url(images/main/collapse-left.png) !important;
+  background-position: 0 0 !important;
+}*/
+
+#leftresource_header #leftresource_header-targetEl .x-tool-collapse-left {
+  /*  background-image: url(images/main/collapse-left.png) !important;
+    background-position: 0 0 !important;*/
+  display: none !important;
+}
+
+.x-tool-expand-right {
+  background-image: url(images/main/collapse-right.png) !important;
+  background-position: 0 0 !important;
+}
+
+.x-tool-expand-left {
+  background-image: url(images/main/collapse-left.png) !important;
+  background-position: 0 0 !important;
+}
+
+#rightRegion_header .x-tool-collapse-right {
+  background-image: url(images/main/collapse-right.png) !important;
+  background-position: 0 0 !important;
+}
+
+.x-tool-collapse-bottom {
+  background-image: url(images/main/collapse-down.png) !important;
+  background-position: 0 -3px !important;
+}
+
+.x-tool-expand-top {
+  background-image: url(images/main/collapse-up.png) !important;
+  background-position: 0 0 !important;
+}
+
+// 错误提示图标
+.x-form-invalid-under-default {
+  background-image: url(images/main/icon-error.png);
+  -webkit-background-size: 1.5em;
+  background-size: 1.5em;
+}
+
+// 系统弹窗的图标更换
+.x-message-box-info {
+  background-image: url(images/main/icon-info.png);
+}
+
+.x-message-box-question {
+  background-image: url(images/main/icon-question.png);
+}
+
+.x-message-box-error {
+  background-image: url(images/main/icon-error.png);
+}
+
+// 默认文本框内阴影去除
+.x-form-text-default {
+  background-image: none;
+}
+
+// 默认文本框选中效果
+.x-form-text-wrap-default.x-form-text-wrap-focus {
+  border-color: #20C1E5;
+}
+
+// 默认下拉框样式覆盖
+.x-form-trigger-default {
+  background-size: 22px 25px;
+  background-image: url(images/main/defult-combobox.png);
+  width: 22px;
+  border-width: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.x-form-trigger-default.x-form-trigger-over {
+  background-position: 0 0;
+  border-color: #c3c3c3;
+}
+
+.x-form-trigger.x-form-trigger-default.x-form-trigger-click {
+  background-position: 0 0;
+}
+
+.x-form-trigger-default.x-form-trigger-over.x-form-trigger-focus {
+  background-position: 0 0;
+}
+
+.x-form-trigger-default.x-form-trigger-focus {
+  background-position: 0 0;
+  border-color: #c3c3c3;
+}
+
+.disabled .x-tree-checkbox {
+  opacity: 0;
+}
+
+// 时间组件的下拉图标
+#timerWindow .x-form-trigger-default {
+  background-size: auto;
+  width: 17px;
+}
+
+#topPanel {
+  height: 100% !important;
+}
+
+#newPro_header-title-textEl,
+#messagebox-1001_header-title-textEl,
+#openProject_header-title-textEl,
+#newFileList3_header-title-textEl,
+#openFile_header-title-textEl,
+#newFileList2_header-title-textEl {
+  color: #000;
+}
+
+#creatProjectId-btnInnerEl, #loadUrl_header-title-textEl, .cancel span, .sure span {
+  color: #fff;
+}
+
+#button-1005, #button-1008 {
+  //background:rgba(74,144,226,1);
+  border-radius: 4px;
+
+  .x-btn-inner-default-small {
+    //color: #fff !important;
+  }
+}
+
+#container-1003-targetEl {
+  .x-window-text {
+    text-align: left;
+  }
+}
+
+.treeUrlAlert .x-grid-item, .treeUrlAlert div {
+  background-color: #FDFCFC !important;
+}
+
+#fieldset-1076 {
+  margin: 10px 0 0px;
+}
+
+#zhang {
+  //background-image: url(images/tools/tool-sprites.gif);
+  margin-bottom: 10px;
+}
+
+.sure:hover, .cancel:hover {
+  background: rgba(44, 114, 197, 1) !important;
+}
+
+#topsMain-body {
+  .x-panel-body-default {
+    background: #f1f1f1 !important;
+  }
+}
+
+#mainbody-body {
+  background: none !important;
+  background-color: none !important;
+  height: 100% !important;
+
+  .x-panel-body-default {
+    //background: none !important;
+  }
+
+  .x-border-layout-ct {
+    background-color: none !important;
+    height: 100% !important;
+  }
+
+  #topsMain {
+    height: 100% !important;
+  }
+}
+
+#topsMain-body {
+  background: #f1f1f1 !important;
+}
+
+#mainbody {
+  top: 0px !important;
+  height: 100% !important;
+}
+
+#leftresource {
+  height: calc(100% - 28px) !important;
+
+  leftresource-bodyWrap {
+    background: #f1f1f1 !important;
+  }
+
+  #leftresource-body {
+    height: calc(100% - 32px) !important;
+  }
+}
+
+#rightRegion {
+  height: calc(100% - 32px) !important;
+
+  #rightElement {
+    height: 100% !important;
+
+    #rightElement-body {
+      height: 100% !important;
+
+      #leftComponent {
+        height: 100% !important;
+
+        #leftComponent-body {
+          height: 100% !important;
+
+          .x-panel-default {
+            height: 100% !important;
+
+            #componentGroup-body {
+              height: 100% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#rightProperty {
+  z-index: 1;
+  top: auto !important;
+  bottom: 0px
+}
+
+#rightProperty-placeholder {
+  top: auto !important;
+  bottom: 1px !important;
+}
+
+#CenterRegion {
+  height: calc(100% - 32px) !important;
+
+  #centerEdit {
+    height: 100% !important;
+
+    #centerEdit-body {
+      height: 100% !important;
+    }
+  }
+}
+
+#centerEdit-body {
+  .x-panel {
+    height: calc(100% - 32px) !important;
+
+    .x-panel-body {
+      height: calc(100% - 0px) !important;
+    }
+  }
+}
+
+#leftresource-body > .x-tree-view {
+  //top: 32px;
+}
+
+#aceEditorEast-bodyWrap {
+  .x-box-scroller-body-horizontal {
+    border-bottom: 2px solid #b5afaf;
+    height: 23px !important;
+  }
+}
+
+.ui-tabpanel {
+  height: 100% !important;
+
+  .x-panel-body {
+    height: 100% !important;
+  }
+}
+
+//资源数组件
+#SubWorkFlow {
+  display: none !important;
+}
+
+// 弹出框按钮样式
+.x-message-box {
+  // 文字超出换行 text-justify: newspaper;
+  //word-break: break-all;
+  .x-box-layout-ct{
+
+  }
+  .x-component{
+
+  }
+  .x-unselectable:last-child {
+    left: 66px !important;
+    max-width: 75px;
+  }
+  .x-unselectable:first-child {
+    right: 0 !important;
+    left: 149px !important;
+    max-width: 75px;
+  }
+  .x-btn-default-small {
+    background: rgb(74, 144, 226);
+
+    .x-btn-inner-default-small {
+      color: #fff;
+      max-width: 75px;
+    }
+  }
+
+  .x-btn-over {
+    background: #579ae8;
+  }
+}
+

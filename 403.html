@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>403</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        html, body{
+            font-size: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background: url(resources/images/main/error-page.jpg) no-repeat 0px 0px;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -ms-background-size: cover;
+            background-attachment: fixed;
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            width: 300px;
+            height: 255px;
+            margin-top: -124px;
+            margin-left: -150px;
+        }
+    </style>
+<body style="overflow: hidden;">
+<div class="main">
+    <canvas id="myCanvas"></canvas>
+    <div class="content">
+        <h1 style="color: #fff;margin: 0px;font-size: 150px;">403</h1>
+        <p style="color: #fff;margin: 0px;font-size: 30px;">服务器拒绝请求</p>
+    </div>
+</div>
+<script src="resources/plugin/jQuery/jquery.min.js"></script>
+<script src="resources/plugin/jQuery/particles.min.js"></script>
+<script>
+    window.onload = function() {
+        Particles.init({
+            selector: '#myCanvas',
+            color: '#6b6b6b',
+            connectParticles: true,
+            minDistance: 100,
+        });
+    };
+</script>
+</body>
+</html>

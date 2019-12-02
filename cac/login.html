@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../resources/plugin/jQuery/jquery.min.js"></script>
+    <script src="cac.js"></script>
+    <script>
+        $(function () {
+            // alert(1)
+            var code = getQueryString("code");
+            var state = getQueryString("state");
+            if (!state || state !== sessionStorage.getItem("state")) {
+                window.location.href = "logout.html";
+            }
+            cac.api.getTokenFromService(code, function(response){
+                cac.token.savetoken(response)
+                var local_redirect_uri = sessionStorage.getItem('local_redirect_uri')
+                local_redirect_uri = local_redirect_uri || cac.config.localuri
+                window.location.href = local_redirect_uri;
+            })
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
+

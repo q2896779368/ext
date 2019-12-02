@@ -1,0 +1,20 @@
+/*
+ * This is is imported by virtue of "sass.var" in "app.json".
+ */
+// 在整个主题中使用的基本颜色
+$base-color : #EEEEEE;
+
+// 在整个主题中使用的中性颜色
+//$neutral-color : #DDDDDD;
+
+// 为所有组件添加平滑样式
+//$enable-font-smoothing : true;
+
+// 在整个主题中启用字体图标支持
+$enable-font-awesome: true;
+
+// 在整个主题中使用的默认文本颜色
+$color : #172C44;
+
+// 在整个主题中使用的基本渐变
+$base-gradient : linear-gradient(-180deg, #EEEEEE 0%, #DDDDDD 100%);
